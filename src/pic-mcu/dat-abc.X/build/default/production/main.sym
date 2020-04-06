@@ -1,0 +1,233 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+004-005 @WRITE_PROGRAM_MEMORY8.P2
+015     CCP_1_LOW
+015     CCP_1
+016     CCP_1_HIGH
+01B     CCP_2_LOW
+01B     CCP_2
+01C     CCP_2_HIGH
+020-021 strtok.save
+022-025 UPPER_TICKS_1
+026     @TRIS_C
+027.0   fan_state
+027.1   light_state
+027.2   auto_hand
+028     temp_setpoint
+029-02C temp_current
+02D     MAIN.s
+02E-031 MAIN.CurrentTick
+032-035 MAIN.PreviousTick
+036     @PSTRINGCN7_756.P1
+036     ds1820_read.busy
+036-039 @PRINTF_L32D_768FPFPF.P1
+036-037 @ITOF.P2
+036     @PRINTF_D_756.P3
+036-039 @FLT.P4
+036-039 @PRINTF_L32D_756FPFPF.P5
+036-039 GetTickDifference.currTick
+036     lcd_init.i
+036     @GET_TICKS_1.@SCRATCH1
+036     @GETCH_1_.@SCRATCH1
+036     MAIN.@SCRATCH1
+036     @PSTRINGC7_756.@SCRATCH1
+036     @PSTRINGC7_768.@SCRATCH1
+036     display.@SCRATCH1
+037     ds1820_read.temp1
+037-03A lcd_init.LCD_INIT_STRING
+037     @PRINTF_D_756.P1
+037     MAIN.@SCRATCH2
+037     @PSTRINGC7_756.@SCRATCH2
+037     @PSTRINGC7_768.@SCRATCH2
+037     @PSTRINGCN7_756.@SCRATCH1
+038     ds1820_read.temp2
+038     MAIN.@SCRATCH3
+038     @PSTRINGC7_756.@SCRATCH3
+038     @PSTRINGC7_768.@SCRATCH3
+038     @PRINTF_D_756.@SCRATCH1
+038     @PSTRINGCN7_756.@SCRATCH2
+039-03A ds1820_read.temp3
+039     MAIN.@SCRATCH4
+039     @PSTRINGC7_756.@SCRATCH4
+039     @PSTRINGC7_768.@SCRATCH4
+039     @PRINTF_D_756.@SCRATCH2
+039     @PSTRINGCN7_756.@SCRATCH3
+03A     @PRINTF_L32D_756FPFPF.P1
+03A     @PRINTF_L32D_768FPFPF.P2
+03A-03D GetTickDifference.prevTick
+03A-03D @FLT.P1
+03A     @PRINTF_D_756.@SCRATCH3
+03A     @PSTRINGCN7_756.@SCRATCH4
+03B-03E ds1820_read.result
+03B     lcd_init.@SCRATCH1
+03B     @PRINTF_D_756.@SCRATCH4
+03B     @PRINTF_L32D_756FPFPF.@SCRATCH1
+03B     @PRINTF_L32D_768FPFPF.@SCRATCH1
+03C     @DIV88.P1
+03C     @PRINTF_L32D_756FPFPF.@SCRATCH2
+03C     @PRINTF_L32D_768FPFPF.@SCRATCH2
+03D     @DIV88.P1
+03D     @PRINTF_L32D_756FPFPF.@SCRATCH3
+03D     @PRINTF_L32D_768FPFPF.@SCRATCH3
+03E     @DIV88.@SCRATCH1
+03E     @PRINTF_L32D_756FPFPF.@SCRATCH4
+03E     @PRINTF_L32D_768FPFPF.@SCRATCH4
+03E     @FLT.@SCRATCH1
+03F     onewire_write.data
+03F-040 @SITOF.P1
+03F     onewire_read.count
+03F     onewire_reset.@SCRATCH1
+03F     ds1820_read.@SCRATCH1
+03F     @PRINTF_L32D_756FPFPF.@SCRATCH5
+03F     @PRINTF_L32D_768FPFPF.@SCRATCH5
+03F     @FLT.@SCRATCH2
+040     onewire_read.data
+040     onewire_write.count
+040     @delay_us1.P1
+040     ds1820_read.@SCRATCH2
+040     @PRINTF_L32D_756FPFPF.@SCRATCH6
+040     @PRINTF_L32D_768FPFPF.@SCRATCH6
+041     ds1820_read.@SCRATCH3
+041     @PRINTF_L32D_756FPFPF.@SCRATCH7
+041     @PRINTF_L32D_768FPFPF.@SCRATCH7
+042     ds1820_read.@SCRATCH4
+042     @PRINTF_L32D_756FPFPF.@SCRATCH8
+042     @PRINTF_L32D_768FPFPF.@SCRATCH8
+043     @PUTCHAR_1_.P1
+043-046 @MULFF.P2
+043-046 @DIVFF.P3
+043-046 @DIV3232.P4
+043     lcd_putc.c
+043-046 @FTOSD.P1
+044     @delay_ms1.P1
+044     lcd_gotoxy.x
+045     lcd_gotoxy.y
+046     lcd_gotoxy.address
+047-04A @DIV3232.P1
+047-04A @MULFF.P2
+047-04A @DIVFF.P3
+047     lcd_gotoxy.@SCRATCH1
+047     @FTOSD.@SCRATCH1
+048     lcd_send_byte.address
+049     lcd_send_byte.n
+04A     lcd_read_byte.low
+04A     lcd_send_byte.@SCRATCH1
+04B     lcd_send_nibble.n
+04B     lcd_read_byte.high
+04B     @DIVFF.@SCRATCH1
+04B     @MULFF.@SCRATCH1
+04B     @DIV3232.@SCRATCH1
+04C     lcd_read_nibble.n
+04C     lcd_read_byte.@SCRATCH1
+04C     @DIVFF.@SCRATCH2
+04C     @MULFF.@SCRATCH2
+04C     @DIV3232.@SCRATCH2
+04D     lcd_read_nibble.@SCRATCH1
+04D     @DIVFF.@SCRATCH3
+04D     @MULFF.@SCRATCH3
+04D     @DIV3232.@SCRATCH3
+04E     @DIVFF.@SCRATCH4
+04E     @MULFF.@SCRATCH4
+04E     @DIV3232.@SCRATCH4
+04F     @DIVFF.@SCRATCH5
+04F     @MULFF.@SCRATCH5
+04F     @DIV3232.@SCRATCH5
+050     @DIVFF.@SCRATCH6
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+107.6   C1OUT
+108.6   C2OUT
+10D-10E @READ_PROGRAM_MEMORY8.P1
+10D-10E @WRITE_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  @const810.call
+000005  @const812.call
+000008  @const816.call
+000009  @const817.call
+00000C  @const818.call
+00000F  @const819.call
+000012  @const820.call
+000015  @const821.call
+000016  @const822.call
+000017  @const823.call
+000020  @delay_ms1
+000034  lcd_send_nibble
+00006C  lcd_read_nibble
+0000A5  lcd_send_byte
+0000B9  lcd_read_byte
+00012D  lcd_init
+000195  lcd_gotoxy
+0001A7  lcd_putc
+0001D3  @PSTRINGC7_756
+000229  @PUTCHAR_1_
+00024B  @PSTRINGC7_768
+0002A3  @GET_TICKS_1
+0002EF  GetTickDifference
+000307  @delay_us1
+000318  onewire_reset
+000331  onewire_write
+000351  onewire_read
+000376  ds1820_read
+00039A  @SITOF
+0003D3  @DIVFF
+0004B2  check_temp
+0004B7  @ITOF
+0004E3  @FLT
+000550  @DIV88
+000565  @MULFF
+0005DA  @FTOSD
+0005F9  @DIV3232
+000648  @PRINTF_L32D_756FPFPF
+00070D  @PRINTF_L32D_768FPFPF
+0007D2  @GETCH_1_
+000800  display
+000880  @PRINTF_D_756
+0008EB  @PSTRINGCN7_756
+000969  @cinit1
+000969  MAIN
+000991  @cinit2
+
+Project Directory:
+    C:\Users\ngodi\MPLABXProjects\dat-abc.X\
+
+Project Files:
+    main.c                                                  [22-Mar-20 16:11  CRC=6C7FD06B]
+    ..\..\..\..\Program Files (x86)\PICC\devices\16F886.h   [18-Apr-14 16:56  CRC=5EEAE656]
+    ..\..\..\..\Program Files (x86)\PICC\drivers\stdio.h    [31-Jul-07 13:24  CRC=4E4534F4]
+    ..\..\..\..\Program Files (x86)\PICC\drivers\string.h   [10-Apr-14 09:04  CRC=662B2714]
+    ..\..\..\..\Program Files (x86)\PICC\drivers\stddef.h   [16-Jul-10 09:27  CRC=897CEC6C]
+    ..\..\..\..\Program Files (x86)\PICC\drivers\ctype.h    [03-Jan-08 13:55  CRC=2D1F019F]
+    ..\..\..\..\Program Files (x86)\PICC\drivers\stdint.h   [30-Dec-08 09:01  CRC=9F7F640F]
+    ..\..\..\..\Program Files (x86)\PICC\drivers\stdbool.h  [21-May-12 10:29  CRC=815AEDE8]
+    ..\..\..\..\Program Files (x86)\PICC\drivers\lcd.c      [19-Sep-13 15:38  CRC=D1A6378A]
+
+Source signature=FA9DC1DF
+
+Units:
+    main (main)
+
+Compiler Settings:
+    Processor:      PIC16F886
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+    Predefined symbols:
+       #define __16F886 1
+
+Output Files:
+    XREF file:   build\default\production\main.xsym
+    Errors:      build\default\production\main.err
+    Ext Symbols: build\default\production\main.esym
+    INHX8:       build\default\production\main.hex
+    Symbols:     build\default\production\main.sym
+    List:        build\default\production\main.lst
+    Debug/COFF:  build\default\production\main.cof
+    Project:     main.ccspjt
+    Call Tree:   build\default\production\main.tre
+    Statistics:  build\default\production\main.STA
